@@ -1,0 +1,277 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+/*  ----------------------------------------------------------------------------
+    TYPOGRAPHY
+*/
+
+  @font-face {
+    font-family: 'gt_sectra_fineblack';
+    src: url('fonts/GT-Sectra-Fine-Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  @font-face {
+    font-family: '205-maaxregular';
+    src: url('fonts/205-maaxregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  @font-face {
+    font-family: '205-maaxblack';
+    src: url('fonts/205-maaxblack-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*  ----------------------------------------------------------------------------
+    STYLE
+*/
+
+body{
+    background-color: black !important;
+        padding-top: 0 !important;
+}
+
+/*  -------------------------------
+    MENU
+*/
+
+.menu-liste{
+width:33%;
+position: absolute;
+top:0;
+left:0;   
+}
+.menu-liste .container{
+width:100%;
+padding: 2em 2em;  
+}
+.menu-liste .picto{
+margin-top: 30px;
+margin-left: 20px;
+}
+.picto img{
+width: 30px;
+}
+
+/*  --------------------------------
+    TITRE
+*/
+
+
+.espace-titre{
+display:block;
+float:left;
+margin-left:7%;
+color: white;
+width:230px; 
+position: absolute;
+top: 30px;    
+}
+.espace-titre h2{
+font-family: 'gt_sectra_fineblack'; 
+font-size: 36px; 
+margin-top:0;    
+}
+.espace-titre p{
+font-family: '205-maaxregular'; 
+font-size: 13px;
+line-height: 17px;   
+}
+
+/*  ---------------------------------
+    TEXT VERSION
+*/
+
+.espace-text-version{
+display:block;
+    right: 4%;
+    top: 40px;
+color: white; 
+    position: absolute;    
+}
+.espace-text-version a{
+    color: white;
+    text-shadow: none;
+    background: black;
+    border: 1px solid white;
+    padding: 0.5em 1em;
+    font-family: '205-maaxblack';
+    font-size: 15px;
+    letter-spacing: 0.04em;   
+}
+
+/*  ----------------------------------
+    PLAYER
+*/
+
+.espace-player{
+display:block;
+    width: 100%;
+    top: 50%;
+    margin-top: -150px;
+    position: absolute;
+}
+.player-cercle{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: black;
+    border: 1px solid white !important;
+    left: 50%;
+    position: relative;
+    margin-left: -150px !important;
+-webkit-box-shadow: 0px 0px 250px 30px #ffffff;
+-moz-box-shadow: 0px 0px 250px 30px #ffffff;
+filter:progid:DXImageTransform.Microsoft.Glow(Color=#ffffff,Strength=80);
+zoom:1;
+box-shadow: 0px 0px 250px 30px #ffffff;
+}
+/* pour IE9 et + ce hack ci-dessous peut être fait avec les commentaires conditionnels d'IE :
+[if gte IE 9]*/
+@media only screen{.player-cercle{filter: none;}} /*Ie9+*/
+.bouton-play{
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px !important;
+    margin-left: -20px !important;
+}
+.bouton-play img{
+    width:60px;
+    border: none !important;
+    background-color: transparent !important;
+    margin:0 !important;
+}
+button.navigate-right{
+    background-image: url(img/fleche-next.png);
+    background-size: 30px;
+    width: 30px !important;
+    height: 60px !important;
+    border: none !important;
+    margin-top: -30px;
+}
+button.navigate-left{
+    background-image: url(img/fleche-prev.png);
+    background-size: 30px;
+    width: 30px !important;
+    height: 60px !important;
+    border: none !important;
+    margin-top: -30px;
+}
+
+.timeline{
+    bottom: 30px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.timeline p{
+    color: white;
+    font-family: '205-maaxblack';
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    margin-bottom: 0;
+    position: absolute;
+    margin-left: -22px;
+    bottom: -5px;
+}
+p#jour1{
+    left: 7%;
+}
+p#jour2{
+    left: 50%;
+}
+p#jour3{
+    left: 93%;
+}
+
+
+/*  -------------------------------
+    FORME PLAYER ATTENTE
+*/
+
+
+.player-cercle{*/
+-webkit-animation-name: attente; /* Safari 4.0 - 8.0 */
+-webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+-webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+-webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+-webkit-animation-timing-function: ease-in-out; /* Safari 4.0 - 8.0 */
+animation-name: attente;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+animation-direction: alternate;  
+animation-timing-function: ease-in-out;  
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes attente {
+    from {box-shadow: 0px 0px 250px 30px #ffffff;}
+    to {box-shadow: 0px 0px 0px 0px #ffffff;}
+}
+
+/* Standard syntax */
+@keyframes attente {
+    from {box-shadow: 0px 0px 250px 30px #ffffff;}
+    to {box-shadow: 0px 0px 0px 0px #ffffff;}
+}
+
+
+/*  -------------------------------
+    TEST FORME PLAYER LECTURE
+*/
+
+
+.player-cercle-lecture-test .player-cercle{
+top: 50%;
+position: absolute;
+margin-top:-150px;   
+background-color: white; 
+    
+-webkit-box-shadow: 0px 0px 150px 20px #ffffff,
+                    inset 1px 1px 40px 10px #000000;
+-moz-box-shadow: 0px 0px 150px 20px #ffffff,
+                 inset 1px 1px 40px 10px #000000;
+filter:progid:DXImageTransform.Microsoft.Glow(Color=#ffffff,Strength=80),
+       progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=134, Strength=20);
+zoom:1;
+box-shadow: 0px 0px 150px 20px #ffffff,
+            inset 1px 1px 40px 10px #000000;    
+    
+border: 0 !important;    
+-webkit-animation-name: lecture; /* Safari 4.0 - 8.0 */
+-webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+animation-name: lecture;
+animation-duration: 4s;  
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes lecture {
+    from {width: 0px; height: 0px; margin-left: 0px; margin-top: 0px;}
+    to {width: 300px; height: 300px; margin-left: -150px; margin-top: -150px;}
+}
+
+/* Standard syntax */
+@keyframes lecture {
+    from {width: 0px; height: 0px; margin-left: 0px; margin-top: 0px;}
+    to {width: 300px; height: 300px; margin-left: -150px; margin-top: -150px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
