@@ -33,13 +33,14 @@
         
           <!-- menu -->
         <div class="menu-liste">
-            <div class="picto"><img src="img/menu.png"></div>
+            <div class="picto"><button><img src="img/menu.png"></button></div>
             <div class="container" style="display:none;">
+            <div class="picto-close"><button><img src="img/menu-close.png"></button></div>    
               <ul>
-                <li><p><a>Home</a></p></li>
-                <li><p><a>Amiens - 2016</a></p></li>  
-                <li><p><a>Lisbon - 2017</a></p></li>  
-                <li><p><a>Internet - coming soon</a></p></li>   
+                <li><p><a><span class="bold">Home</span></a></p></li>
+                <li><p><a><span class="bold">Amiens</span><span class="it"> - 2016</span></a></p></li>  
+                <li><p><a><span class="bold">Lisbon</span><span class="it"> - 2017</span></a></p></li>  
+                <li><p><a><span class="bold">Internet</span><span class="it"> - soon</span></a></p></li>   
                 </ul>
                 </div>
   </div>
@@ -57,19 +58,48 @@
         
           <!-- text version -->  
         <div class="espace-text-version">
-          <p><a id="text-version" href="#" role="button">text version</a></p>
+          <div class="picto"><button>text version</button></div>
+          <div class="container" style="display:none;">  
+            <p>"En 2050 on volera au-dessus des villes."</p> 
+            <p>"L'éducation de l'enfant commencera dans l'utérus."</p>  
+            </div>  
         </div>
         
         
           <!-- player -->
         <div class="reveal">
 			<div class="slides">
-				<section><div class="player-cercle"> <div class="bouton-play"><a href="#"><img src="img/bouton-play.png"></a> </div> 
-                    <audio src="son/test-son1.mp3" controls ></audio></div></section>
-				<section><div class="player-cercle"> <div class="bouton-play"><a href="#"><img src="img/bouton-play.png"></a> </div>
-                    <audio src="son/test-son1.mp3" controls ></audio></div></section>
-                <section><div class="player-cercle"> <div class="bouton-play"><a href="#"><img src="img/bouton-play.png"></a> </div>
-                    <audio src="son/test-son1.mp3" controls ></audio></div></section>
+				<section>
+                    <div class="player-cercle-conteneur">                          
+<audio preload="auto" controls id="audio1">
+    <source src="son/test-son1.wav" />
+    <source src="son/test-son1.mp3" />
+    <source src="son/test-son1.ogg" />
+</audio>
+<div class="player-cercle-attente"></div>                          
+<div class="player-cercle-lecture" id="animation1"></div>
+                    </div>
+                </section>
+				<section>
+                    <div class="player-cercle-conteneur"> 
+<audio preload="auto" controls id="audio2">
+    <source src="son/test-son2.wav" />
+    <source src="son/test-son2.mp3" />
+    <source src="son/test-son2.ogg" />
+</audio>
+<div class="player-cercle-attente"></div>                       
+<div class="player-cercle-lecture" id="animation2"></div>                    
+                    </div></section>
+                <section>
+                    <div class="player-cercle-conteneur"> 
+<audio preload="auto" controls>
+    <source src="son/test-son1.wav" />
+    <source src="son/test-son1.mp3" />
+    <source src="son/test-son1.ogg" />
+</audio> 
+<div class="player-cercle-attente"></div>                         
+<div class="player-cercle-lecture"></div>                    
+                    </div></section>
 			</div>
 		</div>
         
@@ -105,9 +135,109 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
+        <script src="js/audioplayer.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
+        <script>
+    $( function()
+    {
+        $( 'audio' ).audioPlayer();
+    });
+</script>
+
+              <script>
+$(document).ready(function() {
+               
+$('.present .player-cercle-lecture').hide(); 
+$('.present .player-cercle-attente').show();    
+    
+             
+$('.audioplayer.audioplayer-stopped .audioplayer-playpause a').click(function () {
+    
+$('.present .player-cercle-lecture').show(); 
+$('.present .player-cercle-attente').hide();    
+    
+});
+    });
+                  </script>
+
+ <!-- /TO DO VIGO : adapter la durée de l'animation à la durée du son correspondant pour chaque class de audio (pour l'instant id)-->         
+<script>
+$(document).ready(function() {
+    
+  var audio1 = document.getElementById("audio1")
+  var anim = document.getElementById("animation1")  
+
+
+audio1.addEventListener('loadedmetadata', function() {
+        var duration = audio1.duration
+        anim.style.animationDuration = duration + "s"; 
+});    
+    
+
+    console.log(audio1.duration)
+    //audioDuration.pause()
+    //console.log(duration)
+    
+
+
+//document.getElementById("animation1").style.animationDuration = "audioDuration";    
+         
+
+    
+    });
+                  </script>
+ <!-- /fin de TO DO VIGO -->        
+        
+        
+                      <script>
+$(document).ready(function() {
+               
+$('.menu-liste .container').hide(); 
+$('.menu-liste .picto-close').hide();   
+$('.menu-liste .picto').show();      
+   
+    
+             
+$('.menu-liste .picto button').click(function () {
+    
+$('.menu-liste .container').show(); 
+$('.menu-liste .picto-close').show();   
+$('.menu-liste .picto').hide();     
+$('.menu-liste').css('height','100%');     
+    
+    
+});
+    
+$('.menu-liste .picto-close button').click(function () {
+    
+$('.menu-liste .container').hide(); 
+$('.menu-liste .picto-close').hide();   
+$('.menu-liste .picto').show(); 
+$('.menu-liste').css('height','65px');     
+    
+    
+});
+    });
+                  </script>
+                          <script>
+$(document).ready(function() {
+               
+$('.espace-text-version .container').hide();     
+             
+$('.espace-text-version .picto button').click(function () {
+    
+$('.espace-text-version .container').show();          
+    
+});
+    
+    });
+                  </script>    
+
+  
+
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
