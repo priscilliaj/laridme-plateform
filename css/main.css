@@ -17,14 +17,20 @@
     font-style: normal;
 }
   @font-face {
-    font-family: '205-maaxregular';
-    src: url('fonts/205-maaxregular-webfont.woff') format('woff');
+    font-family: 'gt_sectra_finemedium';
+    src: url('fonts/GT-Sectra-Fine-Medium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
   @font-face {
-    font-family: '205-maaxblack';
-    src: url('fonts/205-maaxblack-webfont.woff') format('woff');
+    font-family: 'gt_sectra_finebold';
+    src: url('fonts/GT-Sectra-Fine-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  @font-face {
+    font-family: '205-maaxregular';
+    src: url('fonts/205-maaxregular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -66,10 +72,9 @@ z-index:2;
 width: 100%;
 padding: 10px 20px;
 border-right: 4px solid white;
-height: 90%;
+height: 95%;
 background-color: black;
-margin-top: 20px;  
-    padding-bottom: 200px;    
+margin-top: 20px;     
 }
 .menu-liste .picto{
 margin-top: 30px;
@@ -107,6 +112,34 @@ color: white;
 margin-left: 0;
 margin-top: 40px;   
 }
+.conteneur-logo-liste{
+display: block;
+height: 95%;
+width: 70px;
+top: 0;
+left: 0;
+position: absolute;
+margin-top: 20px;
+}
+.conteneur-logo-player{
+display: block;
+height: 95%;
+width: 70px;
+top: 0;
+left: 0;
+position: absolute;
+margin-top: 20px;
+}
+.logo img{
+width: 32px;    
+}
+.logo{
+display: block;
+position: absolute;
+top: 50%;
+margin-top: -80px;  
+margin-left: 25px;    
+}
 
 
 /*  --------------------------------
@@ -140,11 +173,12 @@ line-height: 17px;
 
 .espace-text-version{
 display:block;
-    right: 4%;
-    top: 40px;
+    right: 0;
+    top: 0;
 color: white; 
     position: absolute;  
-z-index: 2;    
+z-index: 2;  
+width: 30%;    
 }
 .espace-text-version button{
     color: white;
@@ -156,6 +190,44 @@ z-index: 2;
     font-size: 15px;
     letter-spacing: 0.04em;   
 }
+.espace-text-version .container{
+width: 100%;
+padding: 10px 20px;
+border-left: 1px solid white;
+height: 90%;
+background-color: black;
+margin-top: 20px; 
+overflow-y: scroll;    
+}
+.espace-text-version .picto{
+margin-top: 30px;
+margin-right: 57px; 
+float: right;    
+}
+.espace-text-version .picto-close button{
+background-color: transparent;
+border: none;
+    display: block;
+    float: right;  
+position: fixed;
+    right: 20px; 
+padding-top: 0;    
+}
+.espace-text-version .texte{
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 90px;
+}
+.espace-text-version .texte p{
+font-family: 'gt_sectra_finemedium'; 
+font-size: 33px; 
+-webkit-font-smoothing: antialiased; 
+line-height: 42px;   
+margin-bottom: 80px;    
+}
+
 
 /*  ----------------------------------
     PLAYER
@@ -193,6 +265,21 @@ box-shadow: 0px 0px 250px 30px #ffffff;
 /* pour IE9 et + ce hack ci-dessous peut être fait avec les commentaires conditionnels d'IE :
 [if gte IE 9]*/
 @media only screen{.player-cercle{filter: none;}} /*Ie9+*/
+.player-cercle-attente2{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: black;
+    border: 1px solid white !important;
+    left: 0;
+    top:0;
+    position: absolute;
+-webkit-box-shadow: 0px 0px 250px 30px #ffffff;
+-moz-box-shadow: 0px 0px 250px 30px #ffffff;
+filter:progid:DXImageTransform.Microsoft.Glow(Color=#ffffff,Strength=80);
+zoom:1;
+box-shadow: 0px 0px 250px 30px #ffffff;
+}
 .bouton-play{
     left: 50%;
     position: absolute;
@@ -248,6 +335,7 @@ p#jour2{
 p#jour3{
     left: 93%;
 }
+
 
 
 /*  -------------------------------
@@ -380,15 +468,157 @@ animation-fill-mode: forwards;
     to {width: 300px; height: 300px; margin-left: -150px; margin-top: -150px;}
 }
 
+/*  -------------------------------
+    INTRO
+*/
+
+
+.intro {
+    display: block;
+}
+.conteneur-titre, .conteneur-cercle, .conteneur-punchline, .conteneur-bouton-enter{
+  width: 100%;
+  display:block;
+float:left;
+}
+.intro h1 {
+font-family: 'gt_sectra_finebold';
+font-size: 39px;
+color: white;
+text-align: center;
+letter-spacing: 0.4em;
+margin-top: 90px;
+margin-bottom:0;    
+}
+.intro #cercle{
+width: 250px;
+height: 250px;    
+left: 50%;    
+position: relative;
+margin-left: -125px;    
+background-color: white; 
+border-radius: 50%;        
+-webkit-box-shadow: 0px 0px 250px 30px #ffffff;
+-moz-box-shadow: 0px 0px 250px 30px #ffffff;
+filter:progid:DXImageTransform.Microsoft.Glow(Color=#ffffff,Strength=80);
+zoom:1;
+box-shadow: 0px 0px 250px 30px #ffffff;    
+border: 0 !important;   
+margin-top: 90px;    
+}
+.intro #punchline p{
+font-family: '205-maaxregular';
+font-size: 31px;
+line-height: 41px;
+color: white;
+text-align: center;
+-webkit-font-smoothing: antialiased; 
+margin-top: 90px;    
+}
+.intro #bouton-enter{
+    text-align: center;
+    margin-top: 25px; 
+}
+.intro #bouton-enter a{
+font-family: '205-maaxblack';
+font-size: 20px;
+line-height: 26px;
+color: white;
+text-align: center;
+-webkit-font-smoothing: antialiased; 
+margin-top: 40px; 
+border: 1px solid white;
+padding: 0.5em 1em;    
+}
+
+/*  -------------------------------
+    LISTE
+*/
+
+.liste {
+    display: block;
+    margin-top:20px;
+    height: 100%;
+    position: absolute;
+    width: 90%;
+    margin-left: 70px;
+    overflow: hidden;
+}
+#conteneur-amiens, #conteneur-lisbon, #conteneur-web{
+  display:block;
+float:left;
+width:33.33%; 
+border-right: 1px solid white;
+padding-left: 40px;
+padding-top: 80px;    
+height:95%;    
+}
+#conteneur-amiens{
+border-left: 1px solid white;   
+}
+
+.liste h1{
+font-family: 'gt_sectra_fineblack';
+font-size: 45px;
+lineheight: 60px;    
+color: white;
+letter-spacing: 0.01em;
+margin-top: 0;
+margin-bottom:0;  
+-webkit-font-smoothing: antialiased;   
+margin-top: 20px;    
+}
+.liste p{
+font-family: '205-maaxregular';
+font-size: 18px;
+line-height: 23px;
+color: white;
+-webkit-font-smoothing: antialiased;   
+margin-top:30px;
+min-height: 200px;    
+}
+.liste .bouton-enter{
+margin-top: 0;
+margin-bottom: 140px;    
+}
+.liste .bouton-enter a{
+font-family: '205-maaxblack';
+font-size: 20px;
+line-height: 26px;
+color: white;
+text-align: center;
+-webkit-font-smoothing: antialiased; 
+margin-top: 40px; 
+border: 1px solid white;
+padding: 0.5em 1em;    
+}
+
+.picto-amiens img, .picto-lisbon img, .picto-web img{
+    width: 40%;
+}
 
 
 
+/*  -------------------------------
+    Web experience
+*/
 
-
-
-
-
-
-
-
+.coming-soon{
+top: 50%;
+left: 50%;
+margin-left: -130px;
+margin-top: -60px;
+position: absolute;   
+}
+.coming-soon h2{
+font-family: 'gt_sectra_fineblack'; 
+font-size: 36px; 
+line-height: 60px;    
+text-align: center;  
+color: white;
+}
+#audio1{
+    width: 10px !important;
+    height: 10px !important;
+}
 

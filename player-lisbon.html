@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Lisbon</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="animsition-master/dist/css/animsition.min.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
@@ -37,39 +38,52 @@
             <div class="container" style="display:none;">
             <div class="picto-close"><button><img src="img/menu-close.png"></button></div>    
               <ul>
-                <li><p><a><span class="bold">Home</span></a></p></li>
-                <li><p><a><span class="bold">Amiens</span><span class="it"> - 2016</span></a></p></li>  
-                <li><p><a><span class="bold">Lisbon</span><span class="it"> - 2017</span></a></p></li>  
-                <li><p><a><span class="bold">Internet</span><span class="it"> - soon</span></a></p></li>   
+                <li><p><a href="index.html"><span class="bold">Home</span></a></p></li>
+                <li><p><a href="player-amiens.html"><span class="bold">Amiens</span><span class="it"> - 2016</span></a></p></li>  
+                <li><p><a href="player-lisbon.html"><span class="bold">Lisbon</span><span class="it"> - 2017</span></a></p></li>  
+                <li><p><a href="web-experience.html"><span class="bold">Internet</span><span class="it"> - soon</span></a></p></li>   
                 </ul>
                 </div>
   </div>
-        
-          <!-- titre -->  
+        <div class="conteneur-logo-player"><div class="logo"><img src="img/quinzequinze-logo.png"></div></div>
+          <!-- titre --> 
+<div class="animsition">
         <div class="espace-titre">
-          <h2>Amiens<br>
-              2016</h2>
-          <p>digital arts festival<br>
-             Connexions -<br>
-             Les rencontres du numérique<br>
-             28 - 30 april 2016 </p>
+          <h2>Lisbon<br>
+              2017</h2>
+          <p>5th Conference on Computation,<br>
+             Communication, Aesthetics & X<br>
+             xCoAx<br>
+             5 - 7 july 2017 </p>
         </div>
+     </div>
         
         
-          <!-- text version -->  
+          <!-- text version --> 
+        
         <div class="espace-text-version">
-          <div class="picto"><button>text version</button></div>
-          <div class="container" style="display:none;">  
+            
+          <div class="animsition"><div class="picto"><button>text version</button></div></div>
+          <div class="container" style="display:none;"> 
+          <div class="picto-close"><button><img src="img/text-version-close.png"></button></div>       
+          <div class="texte">    
             <p>"En 2050 on volera au-dessus des villes."</p> 
-            <p>"L'éducation de l'enfant commencera dans l'utérus."</p>  
+            <p>"L'éducation de l'enfant commencera dans l'utérus."</p> 
+            <p>"Il y aura des super-héros par milliers."</p>  
+            <p>"La mort ne sera plus une barrière."</p> 
+            <p>"On ne sera que cerveau, plus de corps, plus de matériel, on pourra se téléporter."</p>  
+              </div> 
             </div>  
         </div>
+               
         
         
           <!-- player -->
         <div class="reveal">
 			<div class="slides">
+           
 				<section>
+                                 <div class="animsition">
                     <div class="player-cercle-conteneur">                          
 <audio preload="auto" controls id="audio1">
     <source src="son/test-son1.wav" />
@@ -78,7 +92,7 @@
 </audio>
 <div class="player-cercle-attente"></div>                          
 <div class="player-cercle-lecture" id="animation1"></div>
-                    </div>
+                    </div></div>
                 </section>
 				<section>
                     <div class="player-cercle-conteneur"> 
@@ -103,12 +117,13 @@
 			</div>
 		</div>
         
-        
+        <div class="animsition">
         <div class="timeline">
           <p id="jour1">jour 1</p>
           <p id="jour2">jour 2</p> 
           <p id="jour3">jour 3</p>
         </div>
+</div>
 
 
       <footer>
@@ -139,6 +154,8 @@
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
+
+        <script src="animsition-master/dist/js/animsition.min.js"></script>
         <script>
     $( function()
     {
@@ -224,18 +241,60 @@ $('.menu-liste').css('height','65px');
                           <script>
 $(document).ready(function() {
                
-$('.espace-text-version .container').hide();     
+$('.espace-text-version .container').hide(); 
+$('.espace-text-version .picto-close').hide();   
+$('.espace-text-version .picto').show();     
              
 $('.espace-text-version .picto button').click(function () {
     
-$('.espace-text-version .container').show();          
+$('.espace-text-version .container').show();
+$('.espace-text-version .picto-close').show();   
+$('.espace-text-version .picto').hide();     
+$('.espace-text-version').css('height','100%');    
     
 });
+    
+$('.espace-text-version .picto-close button').click(function () {
+    
+$('.espace-text-version .container').hide(); 
+$('.espace-text-version .picto-close').hide();   
+$('.espace-text-version .picto').show(); 
+$('.espace-text-version').css('height','65px');     
+    
+    
+});    
     
     });
                   </script>    
 
-  
+               <script>
+        $(document).ready(function() {
+  $(".animsition").animsition({
+    inClass: 'fade-in',
+    outClass: 'fade-in',
+    inDuration: 800,
+    outDuration: 1,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+    loading: false,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });
+});
+
+
+ </script> 
 
 
 
