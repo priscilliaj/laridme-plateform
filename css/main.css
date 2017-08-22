@@ -62,7 +62,7 @@ body{
 */
 
 .menu-liste{
-width:25%;
+width:360px;
 position: absolute;
 top:0;
 left:0;  
@@ -110,7 +110,8 @@ color: white;
 }
 .container ul{
 margin-left: 0;
-margin-top: 40px;   
+margin-top: 40px;
+list-style: none;    
 }
 .conteneur-logo-liste{
 display: block;
@@ -140,6 +141,12 @@ top: 50%;
 margin-top: -80px;  
 margin-left: 25px;    
 }
+.menu-liste .logo{
+display:none;
+}
+    .container li{
+    line-height: 1.42857143;
+    }
 
 
 /*  --------------------------------
@@ -150,7 +157,7 @@ margin-left: 25px;
 .espace-titre{
 display:block;
 float:left;
-margin-left:7%;
+margin-left:100px;
 color: white;
 width:230px; 
 position: absolute;
@@ -335,6 +342,12 @@ p#jour2{
 p#jour3{
     left: 93%;
 }
+.reveal .controls .navigate-left {
+    left: 100px !important;
+}
+.reveal .controls .navigate-right{
+    right: 100px !important;    
+}
 
 
 
@@ -475,11 +488,19 @@ animation-fill-mode: forwards;
 
 .intro {
     display: block;
+    margin-top:0;
 }
-.conteneur-titre, .conteneur-cercle, .conteneur-punchline, .conteneur-bouton-enter{
+.conteneur-titre, .conteneur-cercle, .conteneur-punchline{
   width: 100%;
   display:block;
 float:left;
+}
+.conteneur-titre{
+margin-top: 6.5%;
+}
+.conteneur-cercle{
+margin-top: 6.5%;
+margin-bottom: 6.5%;
 }
 .intro h1 {
 font-family: 'gt_sectra_finebold';
@@ -487,7 +508,7 @@ font-size: 39px;
 color: white;
 text-align: center;
 letter-spacing: 0.4em;
-margin-top: 90px;
+margin-top: 0;
 margin-bottom:0;    
 }
 .intro #cercle{
@@ -504,7 +525,7 @@ filter:progid:DXImageTransform.Microsoft.Glow(Color=#ffffff,Strength=80);
 zoom:1;
 box-shadow: 0px 0px 250px 30px #ffffff;    
 border: 0 !important;   
-margin-top: 90px;    
+margin-top: 0;    
 }
 .intro #punchline p{
 font-family: '205-maaxregular';
@@ -513,11 +534,12 @@ line-height: 41px;
 color: white;
 text-align: center;
 -webkit-font-smoothing: antialiased; 
-margin-top: 90px;    
+margin-top: 0;    
 }
 .intro #bouton-enter{
     text-align: center;
-    margin-top: 25px; 
+    margin-top: 2.7%; 
+    margin-bottom: 6%;
 }
 .intro #bouton-enter a{
 font-family: '205-maaxblack';
@@ -537,8 +559,8 @@ padding: 0.5em 1em;
 
 .liste {
     display: block;
-    margin-top:20px;
-    height: 100%;
+    margin-top: 20px;
+    height: 95%;
     position: absolute;
     width: 90%;
     margin-left: 70px;
@@ -550,8 +572,8 @@ float:left;
 width:33.33%; 
 border-right: 1px solid white;
 padding-left: 40px;
-padding-top: 80px;    
-height:95%;    
+padding-top: 7.5%;    
+height: 1500px;    
 }
 #conteneur-amiens{
 border-left: 1px solid white;   
@@ -617,8 +639,298 @@ line-height: 60px;
 text-align: center;  
 color: white;
 }
-#audio1{
-    width: 10px !important;
-    height: 10px !important;
+
+/* ----------------------------- RESPONSIVE --------------------------- */
+/* ----------------------------- media screen 2560 --------------------------- */
+@media screen and (max-width: 2560px) {
+.intro {
+    margin-top:5%;
+} 
 }
 
+/* ----------------------------- media screen 1600 --------------------------- */
+@media screen and (max-width: 1600px) {
+.intro {
+    margin-top:0;
+} 
+.reveal .controls {
+
+}
+}
+
+/* ----------------------------- media screen 1400 --------------------------- */
+@media screen and (max-width: 1400px) {
+.reveal .slides{
+width: 70% !important;    
+}
+}
+
+/* ----------------------------- media screen 1300 --------------------------- */
+@media screen and (max-width: 1300px) {
+.menu-liste .container ul {
+    padding-left: 9px;
+}   
+.menu-liste {
+width: 320px;
+}
+}
+
+/* ----------------------------- media screen 1200 --------------------------- */
+@media screen and (max-width: 1200px) {
+#conteneur-amiens, #conteneur-lisbon, #conteneur-web {
+    padding-top: 12%;
+    }
+.liste p {
+    min-height: 180px;
+}    
+}
+
+/* ----------------------------- media screen 1024 --------------------------- */
+@media screen and (max-width: 1024px) {
+.liste h1{
+ font-size: 40px;       
+    }   
+.liste p{
+font-size: 16px;
+line-height: 20px; 
+min-height: 150px;    
+    }  
+.liste .bouton-enter a, .intro #bouton-enter a{
+font-size: 18px;        
+    } 
+.espace-titre h2, .coming-soon h2 {
+font-size: 34px;
+}    
+.espace-text-version button {
+font-size: 14px;
+    }
+.espace-text-version .texte p {
+font-size: 25px;
+line-height: 33px;
+margin-bottom: 60px;
+    }
+.conteneur-cercle {
+    margin-top: 7.5%;
+    margin-bottom: 7.5%;
+}
+.conteneur-titre {
+    margin-top: 7.5%;
+}
+#conteneur-amiens, #conteneur-lisbon, #conteneur-web {
+padding-left: 30px;
+    }
+.reveal .controls .navigate-right {
+right: 57px !important;
+    }
+}
+/* ----------------------------- media screen 1000 --------------------------- */
+@media screen and (max-width: 1000px) {
+#conteneur-amiens, #conteneur-lisbon, #conteneur-web {
+    padding-top: 7.5%;
+    }   
+}
+
+/* ----------------------------- media screen 800 --------------------------- */
+@media screen and (max-width: 800px) {
+#conteneur-amiens, #conteneur-lisbon, #conteneur-web {
+padding-left: 20px;
+padding-right: 10px;  
+    }      
+   
+}
+
+
+/* ----------------------------- media screen 768 --------------------------- */
+@media screen and (max-width: 768px) {
+.conteneur-titre {
+    margin-top: 18%;
+}
+.conteneur-cercle {
+    margin-top: 18%;
+    margin-bottom: 18%;
+}
+#conteneur-amiens, #conteneur-lisbon, #conteneur-web {
+padding-top: 20%;    
+    } 
+.picto-amiens img, .picto-lisbon img, .picto-web img {
+    width: 60%;
+}
+.liste h1 {
+    margin-top: 40px;
+} 
+.liste p {
+    min-height: 200px;
+}   
+.liste #conteneur-web p {
+    min-height: 155px;
+}   
+.reveal .slides {
+    width: 80% !important;
+}    
+}
+
+/* ----------------------------- media screen 760 --------------------------- */
+@media screen and (max-width: 760px) {
+.liste {
+    overflow: visible;
+    width: 100%;
+    margin-left: 0;
+} 
+    #conteneur-amiens, #conteneur-lisbon, #conteneur-web {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid white;
+    height: 100%;
+}
+    #conteneur-amiens {
+    border-left: none;
+}
+        .conteneur-logo-liste {
+display:none;       
+}
+    .logo {
+    display: block;
+    position: absolute;
+    top: 0;
+    margin-top: -48px;
+    margin-left: -16px;
+    left: 50%;
+}
+    .logo img {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+    .menu-liste .picto {
+    margin-top: 15px;
+    }
+    .menu-liste {
+    position: fixed;
+    height: 65px;
+    border-bottom: 1px solid white;
+    width: 100%;
+    background-color: black;
+    z-index: 3;    
+}
+    .menu-liste .logo{
+display:block;
+}
+.menu-liste .container {
+    margin-top: 10px;
+    border-right: none;
+    border-bottom: 4px solid white;
+    height: 100%;
+    padding-bottom: 40px;
+    overflow-y: scroll;    
+}
+    .espace-text-version {
+    top: 65px;
+}
+.espace-titre {
+    top: 95px;
+}
+    .espace-text-version {
+    width: 100%;
+}
+    .espace-text-version .container {
+    border-left: none;
+    }
+    .menu-liste button {
+    padding-left: 6px;
+}
+    .espace-titre {
+    margin-left: 26px;
+    }
+    .espace-text-version .picto {
+    margin-right: 26px;
+    }
+    .espace-text-version .picto-close button {
+    right: 26px;
+    }
+    .liste {
+    margin-top: 65px;
+    }
+.liste p {
+    min-height: 100%;
+    margin-bottom: 12%;
+}
+    .intro h1 {
+    font-size: 32px;
+    letter-spacing: 0.3em;
+    }
+    .intro #punchline p {
+    font-size: 25px;
+    line-height: 30px;
+    }
+    .reveal.center .slides{
+top: 60% !important;   
+    }
+    .reveal .controls .navigate-left, .reveal .controls .navigate-right {
+    top: 60% !important;
+    }
+    .timeline p {
+    font-size: 13px;
+    margin-left: -19px;
+    }
+    .intro #bouton-enter {
+    margin-top: 6%;
+    }
+    .picto-amiens img, .picto-lisbon img, .picto-web img {
+    width: 40%;
+}
+    #conteneur-amiens, #conteneur-lisbon, #conteneur-web {
+    padding-top: 7%;
+    padding-left: 26px;    
+}
+    .liste h1 {
+    margin-top: 20px;
+}
+    .liste .bouton-enter {
+    margin-bottom: 20%;
+}
+    .espace-titre p {
+    display: none;
+}
+    .reveal .controls .navigate-left {
+    left: 26px !important;
+}
+    .reveal .controls .navigate-right {
+    right: 26px !important;
+}
+        button.navigate-right {
+    background-size: 20px;
+    width: 20px !important;
+    height: 40px !important;
+    margin-top: -20px;
+}
+    button.navigate-left {
+    background-size: 20px;
+    width: 20px !important;
+    height: 40px !important;
+    margin-top: -20px;
+}
+    .espace-text-version .texte {
+    margin-top: 50px;
+}
+    .reveal .slides {
+    width: 100% !important;
+}
+}
+
+/* ----------------------------- media screen 480 --------------------------- */
+@media screen and (max-width: 480px) {
+    .reveal.center .slides{
+top: 50% !important;   
+    }
+    .reveal .controls .navigate-left, .reveal .controls .navigate-right {
+    top: 50% !important;
+    }
+}
+
+/* ----------------------------- media screen 320 --------------------------- */
+@media screen and (max-width: 320px) {
+.conteneur-cercle {
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+}
